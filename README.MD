@@ -48,3 +48,4 @@ gulp
 - Rafael de Moura Dietrich - mrafael.dietrich@gmail.com
 - Franco Bulich Jr. - fbulich@gmail.com
 - Leonardo Rovaris - leo_rovaris@hotmail.com
+- William Ott de Queiroz - williamottq@gmail.com
