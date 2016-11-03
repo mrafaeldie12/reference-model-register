@@ -35,3 +35,11 @@ gulp
 ```
 
 - Access http://localhost:3000
+
+## Technologies & Libraries
+
+- MongoDB
+- NodeJS
+- Mongoose
+- Jade
+- Git
