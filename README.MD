@@ -43,3 +43,6 @@ gulp
 - Mongoose
 - Jade
 - Git
+
+## Members
+- Rafael de Moura Dietrich - mrafael.dietrich@gmail.com
