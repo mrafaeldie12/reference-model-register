@@ -5,10 +5,23 @@ Install items in this order:
 - Git
 - Node
 - Mongo
-- Install gulp globally using npm install -g gulp
+- Install gulp globally 
+````
+npm install -g gulp
+````
 
 ## Running
 
+- Clone project using
+```
+git clone https://github.com/mrafaeldie12/ReferenceModelRegister.git
+```
 - Go to project folder
 - Run Mongo
+```
+mongod
+```
 - Run Gulp
+```
+gulp
+```
