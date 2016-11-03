@@ -17,10 +17,15 @@ npm install -g gulp
 git clone https://github.com/mrafaeldie12/ReferenceModelRegister.git
 ```
 - Go to project folder
-- Run Mongo
+- Run Mongo database in another terminal
 ```
 mongod
 ```
+- Install node dependencies
+```
+npm install
+```
+
 - Run Gulp
 ```
 gulp
