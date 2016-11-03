@@ -47,3 +47,4 @@ gulp
 ## Members
 - Rafael de Moura Dietrich - mrafael.dietrich@gmail.com
 - Franco Bulich Jr. - fbulich@gmail.com
+- Leonardo Rovaris - leo_rovaris@hotmail.com
