@@ -12,7 +12,7 @@ npm install -g gulp
 
 ## Running
 
-- Clone project using
+- Clone project
 ```
 git clone https://github.com/mrafaeldie12/ReferenceModelRegister.git
 ```
@@ -25,3 +25,4 @@ mongod
 ```
 gulp
 ```
+- Access http://localhost:3000
