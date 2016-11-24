@@ -1,60 +1,60 @@
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
-  Modelo = mongoose.model('Modelo');
+  NivelMaturidade = mongoose.model('NivelMaturidade');
 
 module.exports = function (app) {
-  app.use('/rest/modelo', router);
+  app.use('/rest/nivelMaturidade', router);
 };
 
 router.get('/', function (req, res, next) {
-  Modelo.find(function(err, existingModelos) {
+  NivelMaturidade.find(function(err, existingNivelMaturidades) {
         if (err) {
             res.status('500');
             console.error(err);
         } else {
-            res.send(existingModelos);
-            console.log(existingModelos);
+            res.send(existingNivelMaturidades);
+            console.log(existingNivelMaturidades);
         }
         res.end();
     });
 });
 
 router.post('/', function(req, res, next) {
-    var newModelo = new Modelo(req.body);
-    newModelo.save(function(err) {
+    var newNivelMaturidade = new NivelMaturidade(req.body);
+    newNivelMaturidade.save(function(err) {
         if (err) {
           res.status('500');
           console.log(err);
         } else {
           res.status('200');
-          console.log('Modelo saved. Payload:' + newModelo);
+          console.log('Nivel de Maturidade saved. Payload:' + newNivelMaturidade);
         }
         res.end();
     });
 });
 
 router.put('/', function (req, res, next) {
-  Modelo.findOne({ _id : req.body._id }, function(err, existingModelo) {
+  NivelMaturidade.findOne({ _id : req.body._id }, function(err, existingNivelMaturidade) {
         if (err) {
             res.status('500');
             console.error(err);
         } else {
-            existingModelo.sigla = req.body.sigla;
-            existingModelo.nome = req.body.nome;
-            existingModelo.descricao = req.body.descricao;
+            existingNivelMaturidade.sigla = req.body.sigla;
+            existingNivelMaturidade.nome = req.body.nome;
+            existingNivelMaturidade.descricao = req.body.descricao;
 
-            existingModelo.save();
+            existingNivelMaturidade.save();
 
-            res.send(existingModelo);
-            console.log(existingModelo);
+            res.send(existingNivelMaturidade);
+            console.log(existingNivelMaturidade);
         }
         res.end();
     });
 });
 
 router.delete('/:id', function(req, res, next) {
-    Modelo.remove({
+    NivelMaturidade.remove({
         _id: req.params.id
     }, function(err) {
         if (err) {
