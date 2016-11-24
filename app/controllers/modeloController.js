@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  Modelo.findOne({ _id : req.params.id }, function(err, existingModelo) {
+  Modelo.findOne({ _id : req.params.id }).populate('_areasDeProcesso').exec( function(err, existingModelo) {
         if (err) {
             res.status('500');
             console.error(err);
