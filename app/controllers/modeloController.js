@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  Modelo.findOne({ _id : req.params.id }, function(err, existingModelo) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingModelo);
+            console.log(existingModelo);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newModelo = new Modelo(req.body);
     newModelo.save(function(err) {

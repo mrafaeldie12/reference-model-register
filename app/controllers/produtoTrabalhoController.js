@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  ProdutoTrabalho.findOne({ _id : req.params.id }, function(err, existingProdutoTrabalho) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingProdutoTrabalho);
+            console.log(existingProdutoTrabalho);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newProdutoTrabalho = new ProdutoTrabalho(req.body);
     newProdutoTrabalho.save(function(err) {

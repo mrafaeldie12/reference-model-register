@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  Categoria.findOne({ _id : req.params.id }, function(err, existingCategoria) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingCategoria);
+            console.log(existingCategoria);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newCategoria = new Categoria(req.body);
     newCategoria.save(function(err) {

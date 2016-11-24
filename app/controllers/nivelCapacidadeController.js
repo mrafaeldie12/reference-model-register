@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  NivelCapacidade.findOne({ _id : req.params.id }, function(err, existingNivelCapacidade) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingNivelCapacidade);
+            console.log(existingNivelCapacidade);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newNivelCapacidade = new NivelCapacidade(req.body);
     newNivelCapacidade.save(function(err) {
