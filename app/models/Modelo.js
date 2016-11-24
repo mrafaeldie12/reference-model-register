@@ -4,7 +4,10 @@ var mongoose = require('mongoose'),
 var modelo = new Schema({
   sigla: String,
   nome: String,
-  descricao: String
+  descricao: String,
+  _areasDeProcesso : [
+	{ type : Schema.ObjectId, ref : 'AreaDeProcesso' }
+  ]
 });
 
 mongoose.model('Modelo', modelo);
