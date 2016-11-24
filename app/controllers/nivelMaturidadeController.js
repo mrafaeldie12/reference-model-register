@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  NivelMaturidade.findOne({ _id : req.params.id }, function(err, existingNivelMaturidade) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingNivelMaturidade);
+            console.log(existingNivelMaturidade);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newNivelMaturidade = new NivelMaturidade(req.body);
     newNivelMaturidade.save(function(err) {

@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
   nivelMaturidadeSchema = mongoose.model('NivelMaturidade').schema,
   Schema = mongoose.Schema;
 
-var areaProcesso = new Schema({
+var areaProcessoSchema = new Schema({
   sigla: String,
   nome: String,
   descricao: String,
@@ -13,4 +13,4 @@ var areaProcesso = new Schema({
   _nivelMaturidade: {type : Schema.ObjectId, ref : 'NivelMaturidade'}
 });
 
-mongoose.model('AreaProcesso', areaProcesso);
+mongoose.model('AreaProcesso', areaProcessoSchema);

@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  MetaEspecifica.findOne({ _id : req.params.id }, function(err, existingMetaEspecifica) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingMetaEspecifica);
+            console.log(existingMetaEspecifica);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newMetaEspecifica = new MetaEspecifica(req.body);
     newMetaEspecifica.save(function(err) {

@@ -20,6 +20,19 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/:id', function (req, res, next) {
+  PraticaEspecifica.findOne({ _id : req.params.id }, function(err, existingPraticaEspecifica) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingPraticaEspecifica);
+            console.log(existingPraticaEspecifica);
+        }
+        res.end();
+    });
+});
+
 router.post('/', function(req, res, next) {
     var newPraticaEspecifica = new PraticaEspecifica(req.body);
     newPraticaEspecifica.save(function(err) {

@@ -20,51 +20,64 @@
       });
   });
 
-  router.post('/', function(req, res, next) {
-      var newAreaProcesso = new AreaProcesso(req.body);
-      newAreaProcesso.save(function(err) {
-          if (err) {
+router.get('/:id', function (req, res, next) {
+  AreaProcesso.findOne({ _id : req.params.id }, function(err, existingAreaProcesso) {
+        if (err) {
             res.status('500');
-            console.log(err);
-          } else {
-            res.status('200');
-            console.log('Area processo saved. Payload:' + newAreaProcesso);
-          }
-          res.end();
-      });
-  });
+            console.error(err);
+        } else {
+            res.send(existingAreaProcesso);
+            console.log(existingAreaProcesso);
+        }
+        res.end();
+    });
+});
 
-  router.put('/', function (req, res, next) {
-    AreaProcesso.findOne({ _id : req.body._id }, function(err, existingAreaProcesso) {
-          if (err) {
-              res.status('500');
-              console.error(err);
-          } else {
-              existingAreaProcesso.sigla = req.body.sigla;
-              existingAreaProcesso.nome = req.body.nome;
-              existingAreaProcesso.descricao = req.body.descricao;
-              existingAreaProcesso._categoria = req.body._categoria;
-              existingAreaProcesso._nivelMaturidade = req.body._categoria;
+router.post('/', function(req, res, next) {
+    var newAreaProcesso = new AreaProcesso(req.body);
+    newAreaProcesso.save(function(err) {
+        if (err) {
+          res.status('500');
+          console.log(err);
+        } else {
+          res.status('200');
+          console.log('Area processo saved. Payload:' + newAreaProcesso);
+        }
+        res.end();
+    });
+});
 
-              existingAreaProcesso.save();
-
-              res.send(existingAreaProcesso);
-              console.log(existingAreaProcesso);
-          }
-          res.end();
-      });
-  });
-
-  router.delete('/:id', function(req, res, next) {
-      AreaProcesso.remove({
-          _id: req.params.id
-      }, function(err) {
-          if (err) {
+router.put('/', function (req, res, next) {
+  AreaProcesso.findOne({ _id : req.body._id }, function(err, existingAreaProcesso) {
+        if (err) {
             res.status('500');
-            console.log(err);
-          } else {
-            res.status('200');
-          }
-          res.end();
-      });
-  });
+            console.error(err);
+        } else {
+            existingAreaProcesso.sigla = req.body.sigla;
+            existingAreaProcesso.nome = req.body.nome;
+            existingAreaProcesso.descricao = req.body.descricao;
+            existingAreaProcesso._categoria = req.body._categoria;
+            existingAreaProcesso._nivelMaturidade = req.body._categoria;
+
+            existingAreaProcesso.save();
+
+            res.send(existingAreaProcesso);
+            console.log(existingAreaProcesso);
+        }
+        res.end();
+    });
+});
+
+router.delete('/:id', function(req, res, next) {
+    AreaProcesso.remove({
+        _id: req.params.id
+    }, function(err) {
+        if (err) {
+          res.status('500');
+          console.log(err);
+        } else {
+          res.status('200');
+        }
+        res.end();
+    });
+});

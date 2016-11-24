@@ -1,10 +1,10 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var praticaEspecifica = new Schema({
+var praticaEspecificaSchema = new Schema({
   sigla: String,
   nome: String,
   descricao: String
 });
 
-mongoose.model('PraticaEspecifica', praticaEspecifica);
+mongoose.model('PraticaEspecifica', praticaEspecificaSchema);

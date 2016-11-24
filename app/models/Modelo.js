@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-var modelo = new Schema({
+var modeloSchema = new Schema({
   sigla: String,
   nome: String,
   descricao: String,
@@ -10,4 +10,4 @@ var modelo = new Schema({
   ]
 });
 
-mongoose.model('Modelo', modelo);
+mongoose.model('Modelo', modeloSchema);
