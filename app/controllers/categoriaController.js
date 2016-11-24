@@ -1,60 +1,58 @@
 var express = require('express'),
   router = express.Router(),
   mongoose = require('mongoose'),
-  Modelo = mongoose.model('Modelo');
+  Categoria = mongoose.model('Categoria');
 
 module.exports = function (app) {
-  app.use('/rest/modelo', router);
+  app.use('/rest/categoria', router);
 };
 
 router.get('/', function (req, res, next) {
-  Modelo.find(function(err, existingModelos) {
+  Categoria.find(function(err, existingCategorias) {
         if (err) {
             res.status('500');
             console.error(err);
         } else {
-            res.send(existingModelos);
-            console.log(existingModelos);
+            res.send(existingCategorias);
+            console.log(existingCategorias);
         }
         res.end();
     });
 });
 
 router.post('/', function(req, res, next) {
-    var newModelo = new Modelo(req.body);
-    newModelo.save(function(err) {
+    var newCategoria = new Categoria(req.body);
+    newCategoria.save(function(err) {
         if (err) {
           res.status('500');
           console.log(err);
         } else {
           res.status('200');
-          console.log('Modelo saved. Payload:' + newModelo);
+          console.log('Categoria saved. Payload:' + newCategoria);
         }
         res.end();
     });
 });
 
 router.put('/', function (req, res, next) {
-  Modelo.findOne({ _id : req.body._id }, function(err, existingModelo) {
+  Categoria.findOne({ _id : req.body._id }, function(err, existingCategoria) {
         if (err) {
             res.status('500');
             console.error(err);
         } else {
-            existingModelo.sigla = req.body.sigla;
-            existingModelo.nome = req.body.nome;
-            existingModelo.descricao = req.body.descricao;
+            categoria.nome = req.body.nome;
 
-            existingModelo.save();
+            existingCategoria.save();
 
-            res.send(existingModelo);
-            console.log(existingModelo);
+            res.send(existingCategoria);
+            console.log(existingCategoria);
         }
         res.end();
     });
 });
 
 router.delete('/:id', function(req, res, next) {
-    Modelo.remove({
+    Categoria.remove({
         _id: req.params.id
     }, function(err) {
         if (err) {
