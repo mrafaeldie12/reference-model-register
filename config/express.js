@@ -17,7 +17,8 @@ module.exports = function(app, config) {
   app.set('view engine', 'jade');
 
   app.use(express.static(config.root + '/public'));
-  app.use('/scripts', express.static(config.root + '/node_modules/'));
+  app.use('/node_modules', express.static(config.root + '/node_modules/'));
+  app.use('/bower', express.static(config.root + '/vendor/'));
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
