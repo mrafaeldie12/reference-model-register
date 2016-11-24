@@ -56,6 +56,7 @@ router.put('/', function (req, res, next) {
             existingModelo.sigla = req.body.sigla;
             existingModelo.nome = req.body.nome;
             existingModelo.descricao = req.body.descricao;
+            existingModelo._areasDeProcesso = req.body._areasDeProcesso;
 
             existingModelo.save();
 
