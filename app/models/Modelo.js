@@ -5,7 +5,7 @@ var modelo = new Schema({
   sigla: String,
   nome: String,
   descricao: String,
-  areasDeProcesso : [
+  _areasDeProcesso : [
 	{ type : Schema.ObjectId, ref : 'AreaDeProcesso' }
   ]
 });

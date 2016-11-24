@@ -43,6 +43,8 @@
               existingAreaProcesso.sigla = req.body.sigla;
               existingAreaProcesso.nome = req.body.nome;
               existingAreaProcesso.descricao = req.body.descricao;
+              existingAreaProcesso._categoria = req.body._categoria;
+              existingAreaProcesso._nivelMaturidade = req.body._categoria;
 
               existingAreaProcesso.save();
 

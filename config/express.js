@@ -18,7 +18,7 @@ module.exports = function(app, config) {
 
   app.use(express.static(config.root + '/public'));
   app.use('/node_modules', express.static(config.root + '/node_modules/'));
-  app.use('/bower', express.static(config.root + '/vendor/'));
+  app.use('/bower', express.static(config.root + '/public/components'));
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
