@@ -21,7 +21,7 @@
   });
 
 router.get('/:id', function (req, res, next) {
-  AreaProcesso.findOne({ _id : req.params.id }, function(err, existingAreaProcesso) {
+  AreaProcesso.findOne({ _id : req.params.id }).populate('_categoria _nivelMaturidade').exec(function(err, existingAreaProcesso) {
         if (err) {
             res.status('500');
             console.error(err);
