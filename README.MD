@@ -9,6 +9,10 @@ Install items in this order:
 ````
 npm install -g gulp
 ````
+- Install bower globally
+````
+npm install -g bower
+````
 
 ## Running
 
@@ -27,6 +31,11 @@ mongod
 - Install node dependencies
 ```
 npm install
+```
+
+- Install bower dependencies
+```
+bower install
 ```
 
 - Run Gulp
