@@ -1,4 +1,4 @@
-referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$http', 'AreaProcessoService', 'CategoriaService', 'NivelMaturidadeService', function($scope, $http, areaProcessoService, categoriaService, nivelMaturidadeService) {
+referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$http', 'AreaProcessoService', 'CategoriaService', 'NivelMaturidadeService', 'MetaEspecificaService', function($scope, $http, areaProcessoService, categoriaService, nivelMaturidadeService, metaEspecificaService) {
     function getAllAreaProcessos() {
         areaProcessoService.getAll().then(function(response) {
             $scope.retrievedAreaProcessos = response.data;
@@ -15,6 +15,12 @@ referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$h
 
     nivelMaturidadeService.getAll().then(function(response) {
             $scope.nivelMaturidades = response.data;
+        }, function() {
+            console.log('Error');
+    });
+
+    metaEspecificaService.getAll().then(function(response) {
+        $scope.metaEspecificas = response.data;
         }, function() {
             console.log('Error');
     });
