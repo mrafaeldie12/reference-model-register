@@ -7,7 +7,6 @@ referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$h
         });
     };
 
-    $scope.localCopy = {};
     $scope.retrievedAreaProcessos = [];
     $scope.areaProcesso = {};
 
@@ -22,7 +21,6 @@ referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$h
     };
 
     $scope.update = function(areaProcesso) {
-        $scope.localCopy = areaProcesso;
         $http.put('/rest/areaProcesso', areaProcesso).then(function() {
             console.log('Success');
         }, function() {
@@ -43,9 +41,4 @@ referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$h
     $scope.getAll = function(){
     	getAllAreaProcessos();
     };
-
-    $scope.reset = function() {
-        $scope.areaProcesso = angular.copy($scope.localCopy);
-    };
-    $scope.reset();
 }]);

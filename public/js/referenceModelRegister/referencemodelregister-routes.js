@@ -4,7 +4,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/areaProcesso/listAreaProcesso.html'
         });
         $routeProvider.when('/listCategoria', {
-            templateUrl: '/views/listCategoria.html'
+            templateUrl: '/views/categoria/listCategoria.html'
         });
         $routeProvider.when('/listModelo', {
             templateUrl: 'views/listModelo.html'
@@ -31,7 +31,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/areaProcesso/addAreaProcesso.html'
         });
         $routeProvider.when('/addCategoria', {
-            templateUrl: '/views/addCategoria.html'
+            templateUrl: '/views/categoria/addCategoria.html'
         });
         $routeProvider.when('/addModelo', {
             templateUrl: 'views/addModelo.html'
