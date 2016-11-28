@@ -8,7 +8,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  MetaGenerica.find(function(err, existingMetaGenerica) {
+  MetaGenerica.find().populate('_metaEspecifica').exec(function(err, existingMetaGenerica) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  MetaGenerica.findOne({ _id : req.params.id }, function(err, existingMetaGenerica) {
+  MetaGenerica.findOne({ _id : req.params.id }).populate('_metaEspecifica').exec( function(err, existingMetaGenerica) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -56,7 +56,8 @@ router.put('/', function (req, res, next) {
             existingMetaGenerica.sigla = req.body.sigla;
             existingMetaGenerica.nome = req.body.nome;
             existingMetaGenerica.descricao = req.body.descricao;
-
+            existingMetaGenerica._metaEspecifica = req.body._metaEspecifica;
+            
             existingMetaGenerica.save();
 
             res.send(existingMetaGenerica);
