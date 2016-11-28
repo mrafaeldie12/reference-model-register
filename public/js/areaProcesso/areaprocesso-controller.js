@@ -1,6 +1,6 @@
-areaProcessoModule.controller('AreaProcessoController', ['$scope', '$http', 'AreaProcessoService', function($scope, $http, areaProcessoService) {
+referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$http', 'AreaProcessoService', function($scope, $http, areaProcessoService) {
     function getAllAreaProcessos() {
-        AreaProcessoService.getAll().then(function(response) {
+        areaProcessoService.getAll().then(function(response) {
             $scope.retrievedAreaProcessos = response.data;
         }, function() {
             console.log('Error');
@@ -9,33 +9,29 @@ areaProcessoModule.controller('AreaProcessoController', ['$scope', '$http', 'Are
 
     $scope.localCopy = {};
     $scope.retrievedAreaProcessos = [];
+    $scope.areaProcesso = {};
 
 	getAllAreaProcessos();
 
-    $scope.save = function(areaProcesso) {
-        $scope.localCopy = areaProcesso;
-        $http.post('/areaProcesso', areaProcesso).then(function() {
+    $scope.save = function() {
+        $http.post('/rest/areaProcesso', $scope.areaProcesso).then(function() {
             console.log('Success');
         }, function() {
             console.log('Error');
         });
-
-        getAllAreaProcessos();
     };
 
     $scope.update = function(areaProcesso) {
         $scope.localCopy = areaProcesso;
-        $http.put('/areaProcesso', areaProcesso).then(function() {
+        $http.put('/rest/areaProcesso', areaProcesso).then(function() {
             console.log('Success');
         }, function() {
             console.log('Error');
         });
-
-        getAllAreaProcessos();
     };
     
     $scope.delete = function(areaProcesso) {
-        $http.delete('/areaProcesso/' + areaProcesso._id).then(function() {
+        $http.delete('/rest/areaProcesso/' + areaProcesso._id).then(function() {
             console.log('Success');
         }, function() {
             console.log('Error');

@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="ReferenceModelRegister">
+<html ng-app="ReferenceModelRegisterModule">
 <head>
     <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
@@ -12,7 +12,12 @@
     <div ng-view> </div>
     <script src="bower/angular/angular.js"> </script>
     <script src="bower/angular-route/angular-route.js"> </script>
-    <script src="routes/mainRoutes.js"> </script>
-
+    
+    <script src="js/referenceModelRegister/referencemodelregister-module.js"> </script>
+    <script src="js/referenceModelRegister/referencemodelregister-routes.js"> </script>
+	
+	<script src="js/areaProcesso/areaprocesso-module.js"></script>
+	<script src="js/areaProcesso/areaprocesso-controller.js"></script>
+	<script src="js/areaProcesso/areaprocesso-service.js"></script>
 </body>
 </html>

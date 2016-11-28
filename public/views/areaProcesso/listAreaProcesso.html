@@ -1,0 +1,32 @@
+<div ng-controller="AreaProcessoController">
+    <br>
+    <a ng-href="#/main" class="btn btn-primary">
+        Voltar
+    </a>
+    <br><br><br>
+    <div class="jumbotron">
+        <h1 class="text-center">
+            Áreas de Processo
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingAreaProcesso in retrievedAreaProcessos">
+                <td>{{ existingAreaProcesso.sigla }}</td>
+                <td>{{ existingAreaProcesso.nome }}</td>
+                <td>{{ existingAreaProcesso.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <a ng-href="#/addAreaProcesso" class="btn btn-primary">
+        Cadastrar
+    </a>
+</div>

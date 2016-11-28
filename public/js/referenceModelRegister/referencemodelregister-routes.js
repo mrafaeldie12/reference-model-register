@@ -1,8 +1,7 @@
-angular.module('ReferenceModelRegister', ['ngRoute'])
-    .config(function($routeProvider){
+referenceModelRegisterModule.config(function($routeProvider){
 
         $routeProvider.when('/listAreaProcesso', {
-            templateUrl: 'views/listAreaProcesso.html'
+            templateUrl: 'views/areaProcesso/listAreaProcesso.html'
         });
         $routeProvider.when('/listCategoria', {
             templateUrl: '/views/listCategoria.html'
@@ -29,7 +28,7 @@ angular.module('ReferenceModelRegister', ['ngRoute'])
             templateUrl: 'views/listPraticaEspecifica.html'
         });
         $routeProvider.when('/addAreaProcesso', {
-            templateUrl: 'views/addAreaProcesso.html'
+            templateUrl: 'views/areaProcesso/addAreaProcesso.html'
         });
         $routeProvider.when('/addCategoria', {
             templateUrl: '/views/addCategoria.html'

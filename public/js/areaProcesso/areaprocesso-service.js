@@ -1,5 +1,5 @@
-areaProcessoModule.service('AreaProcessoService', function($http) {
+referenceModelRegisterModule.service('AreaProcessoService', function($http) {
     this.getAll = function() {
-        return $http.get('/areaProcesso');
+        return $http.get('/rest/areaProcesso');
     }
 });

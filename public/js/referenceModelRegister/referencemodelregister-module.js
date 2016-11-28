@@ -1,0 +1,1 @@
+var referenceModelRegisterModule = angular.module('ReferenceModelRegisterModule', ['ngRoute']);

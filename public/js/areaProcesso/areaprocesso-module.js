@@ -1,1 +1,1 @@
-var areaProcessoModule = angular.module('AreaProcessoModule', []);
+var referenceModelRegisterModule = angular.module('ReferenceModelRegisterModule')
