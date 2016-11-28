@@ -8,7 +8,7 @@
   };
 
   router.get('/', function (req, res, next) {
-    AreaProcesso.find(function(err, existingAreaProcessos) {
+    AreaProcesso.find().populate('_categoria _nivelMaturidade').exec(function(err, existingAreaProcessos) {
           if (err) {
               res.status('500');
               console.error(err);
