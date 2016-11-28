@@ -16,7 +16,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/listProdutoTrabalho.html'
         });
         $routeProvider.when('/listMetaGenerica', {
-            templateUrl: 'views/listMetaGenerica.html'
+            templateUrl: 'views/metaGenerica/listMetaGenerica.html'
         });
         $routeProvider.when('/listMetaEspecifica', {
             templateUrl: 'views/metaEspecifica/listMetaEspecifica.html'
@@ -43,7 +43,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/addProdutoTrabalho.html'
         });
         $routeProvider.when('/addMetaGenerica', {
-            templateUrl: 'views/addMetaGenerica.html'
+            templateUrl: 'views/metaGenerica/addMetaGenerica.html'
         });
         $routeProvider.when('/addMetaEspecifica', {
             templateUrl: 'views/metaEspecifica/addMetaEspecifica.html'

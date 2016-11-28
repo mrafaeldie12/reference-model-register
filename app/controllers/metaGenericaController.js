@@ -8,7 +8,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  metaGenerica.find(function(err, existingMetaGenerica) {
+  MetaGenerica.find(function(err, existingMetaGenerica) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
           console.log(err);
         } else {
           res.status('200');
-          console.log('Area processo saved. Payload:' + newetaGenerica);
+          console.log('Area processo saved. Payload:' + newMetaGenerica);
         }
         res.end();
     });

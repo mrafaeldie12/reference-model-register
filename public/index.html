@@ -9,49 +9,61 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="container">
-    
-    <nav class="navbar">
-        <div>
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listAreaProcesso">Áreas de Processo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listCategoria">Categorias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listModelo">Modelos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listNivelMaturidade">Níveis de Maturidades</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listProdutoTrabalho">Produtos de Trabalho</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listMetaGenerica">Metas Genéricas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listMetaEspecifica">Metas Específicas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listNIvelCapacidade">Níveis de Capacidade</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/listPraticaEspecifica">Práticas Específicas</a>
-                </li>
-            </ul>
+
+    <nav class="navbar navbar-default">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Mostrar navegação</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Cadastro de Modelos</a>
+            </div>
+            <div id="navbar" class="navbar" aria-expanded="false">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listAreaProcesso">Áreas de Processo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listCategoria">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listModelo">Modelos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listNivelMaturidade">Níveis de Maturidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listProdutoTrabalho">Produtos de Trabalho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listMetaGenerica">Metas Genéricas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listMetaEspecifica">Metas Específicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listNIvelCapacidade">Níveis de Capacidade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/listPraticaEspecifica">Práticas Específicas</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    
+
     <div ng-view> </div>
     <script src="bower/angular/angular.js"> </script>
     <script src="bower/angular-route/angular-route.js"> </script>
-    
+
     <script src="js/referenceModelRegister/referencemodelregister-module.js"> </script>
     <script src="js/referenceModelRegister/referencemodelregister-routes.js"> </script>
-    
+
     <script src="js/areaProcesso/areaprocesso-module.js"></script>
     <script src="js/areaProcesso/areaprocesso-controller.js"></script>
     <script src="js/areaProcesso/areaprocesso-service.js"></script>
@@ -63,6 +75,10 @@
     <script src="js/metaEspecifica/metaespecifica-module.js"></script>
     <script src="js/metaEspecifica/metaespecifica-controller.js"></script>
     <script src="js/metaEspecifica/metaespecifica-service.js"></script>
+
+    <script src="js/metaGenerica/metagenerica-module.js"></script>
+    <script src="js/metaGenerica/metagenerica-controller.js"></script>
+    <script src="js/metaGenerica/metagenerica-service.js"></script>
 
 
 </body>
