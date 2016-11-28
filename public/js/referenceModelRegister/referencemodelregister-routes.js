@@ -19,7 +19,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/listMetaGenerica.html'
         });
         $routeProvider.when('/listMetaEspecifica', {
-            templateUrl: 'views/listMetaEspecifica.html'
+            templateUrl: 'views/metaEspecifica/listMetaEspecifica.html'
         });
         $routeProvider.when('/listNivelCapacidade', {
             templateUrl: 'views/listNivelCapacidade.html'
@@ -46,7 +46,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/addMetaGenerica.html'
         });
         $routeProvider.when('/addMetaEspecifica', {
-            templateUrl: 'views/addMetaEspecifica.html'
+            templateUrl: 'views/metaEspecifica/addMetaEspecifica.html'
         });
         $routeProvider.when('/addNivelCapacidade', {
             templateUrl: 'views/addNivelCapacidade.html'
