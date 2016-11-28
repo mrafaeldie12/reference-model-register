@@ -21,12 +21,12 @@ npm install -g bower
 git clone https://github.com/mrafaeldie12/ReferenceModelRegister.git
 ```
 
-- Go to project folder
-
 - Run Mongo database in another terminal
 ```
 mongod
 ```
+
+- Go to project folder
 
 - Install node dependencies
 ```
