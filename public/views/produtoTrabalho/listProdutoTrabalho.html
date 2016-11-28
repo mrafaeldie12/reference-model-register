@@ -1,0 +1,25 @@
+<div ng-controller="ProdutoTrabalhoController">
+    <div class="jumbotron">
+        <h1 class="text-center">
+            Produto de Trabalho
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Template</th>
+            </tr>
+
+            <tr ng-repeat="existingProdutoTrabalho in retrievedProdutoTrabalhos">
+                <td>{{ existingProdutoTrabalho.nome }}</td>
+                <td>{{ existingProdutoTrabalho.template }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <a ng-href="#/addProdutoTrabalho" class="btn btn-primary">
+        Cadastrar
+    </a>
+</div>

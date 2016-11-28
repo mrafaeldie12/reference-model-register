@@ -7,13 +7,13 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: '/views/categoria/listCategoria.html'
         });
         $routeProvider.when('/listModelo', {
-            templateUrl: 'views/listModelo.html'
+            templateUrl: 'views/modelo/listModelo.html'
         });
         $routeProvider.when('/listNivelMaturidade', {
             templateUrl: 'views/nivelMaturidade/listNivelMaturidade.html'
         });
         $routeProvider.when('/listProdutoTrabalho', {
-            templateUrl: 'views/listProdutoTrabalho.html'
+            templateUrl: 'views/produtoTrabalho/listProdutoTrabalho.html'
         });
         $routeProvider.when('/listMetaGenerica', {
             templateUrl: 'views/metaGenerica/listMetaGenerica.html'
@@ -34,13 +34,13 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: '/views/categoria/addCategoria.html'
         });
         $routeProvider.when('/addModelo', {
-            templateUrl: 'views/addModelo.html'
+            templateUrl: 'views/modelo/addModelo.html'
         });
         $routeProvider.when('/addNivelMaturidade', {
             templateUrl: 'views/nivelMaturidade/addNivelMaturidade.html'
         });
         $routeProvider.when('/addProdutoTrabalho', {
-            templateUrl: 'views/addProdutoTrabalho.html'
+            templateUrl: 'views/produtoTrabalho/addProdutoTrabalho.html'
         });
         $routeProvider.when('/addMetaGenerica', {
             templateUrl: 'views/metaGenerica/addMetaGenerica.html'

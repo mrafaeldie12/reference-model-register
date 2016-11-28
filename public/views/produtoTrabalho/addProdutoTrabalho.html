@@ -1,0 +1,32 @@
+<div>
+	<a ng-href="#/listProdutoTrabalho" class="btn btn-primary">
+		Voltar
+	</a>
+</div>
+<div>
+	<div ng-controller="ProdutoTrabalhoController">
+
+		<br>
+		
+		<div class="jumbotron">
+			<h1 class="text-center">
+				Adicionando Produto de Trabalho
+			</h1>
+		</div>
+		<form novalidate>
+		  	<div class="form-group">
+	    		<label for="nome">Nome</label>
+				<input class="form-control" id="nome" ng-model="produtoTrabalho.nome"> </input><br>
+	    		<label for="descricao">Template</label>
+				<input class="form-control" id="Template" ng-model="produtoTrabalho.template"> </input><br>
+
+				<div>
+					<a ng-href="#/listProdutoTrabalho" class="btn btn-primary" ng-click="save()"> 
+						Cadastrar	
+					</a>
+				</div>
+			<div>
+		</form>
+
+	</div>
+</div>

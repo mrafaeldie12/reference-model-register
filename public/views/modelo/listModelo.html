@@ -1,0 +1,27 @@
+<div ng-controller="ModeloController">
+    <div class="jumbotron">
+        <h1 class="text-center">
+            Modelos
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingModelo in retrievedModelos">
+                <td>{{ existingModelo.sigla }}</td>
+                <td>{{ existingModelo.nome }}</td>
+                <td>{{ existingModelo.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <a ng-href="#/addModelo" class="btn btn-primary">
+        Cadastrar
+    </a>
+</div>
