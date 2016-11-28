@@ -1,4 +1,4 @@
-referenceModelRegisterModule.controller('MetaGenericaController', ['$scope', '$http', 'MetaGenericaService', function($scope, $http, metaGenericaService) {
+referenceModelRegisterModule.controller('MetaGenericaController', ['$scope', '$http', 'MetaGenericaService','MetaEspecificaService', function($scope, $http, metaGenericaService, metaEspecificaService) {
     function getAllMetaGenericas() {
         metaGenericaService.getAll().then(function(response) {
             $scope.retrievedMetaGenericas = response.data;
@@ -6,7 +6,12 @@ referenceModelRegisterModule.controller('MetaGenericaController', ['$scope', '$h
             console.log('Error');
         });
     };
-
+     metaGenericaService.getAll().then(function(response) {
+        $scope.metaEspecifica = response.data;
+        }, function() {
+            console.log('Error');
+    });
+    
     $scope.retrievedMetaGenericas = [];
     $scope.metaGenerica = {};
 
