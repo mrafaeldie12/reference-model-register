@@ -6,7 +6,7 @@ referenceModelRegisterModule.controller('MetaGenericaController', ['$scope', '$h
             console.log('Error');
         });
     };
-     metaGenericaService.getAll().then(function(response) {
+     metaEspecificaService.getAll().then(function(response) {
         $scope.metaEspecifica = response.data;
         }, function() {
             console.log('Error');
