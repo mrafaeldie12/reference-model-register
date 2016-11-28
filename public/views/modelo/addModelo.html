@@ -22,6 +22,11 @@
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="modelo.descricao"> </input><br>
 
+				<select ng-model="modelo._areasDeProcesso">
+					<option ng-repeat="x in areaProcessos" value="{{x._id}}">{{x.nome}}</option>
+				</select>
+				<br><br><br><br><br>
+
 				<div>
 					<a ng-href="#/listModelo" class="btn btn-primary" ng-click="save()"> 
 						Cadastrar	

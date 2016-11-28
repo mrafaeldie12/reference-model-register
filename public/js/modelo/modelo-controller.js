@@ -1,4 +1,4 @@
-referenceModelRegisterModule.controller('ModeloController', ['$scope', '$http', 'ModeloService', function($scope, $http, modeloService) {
+referenceModelRegisterModule.controller('ModeloController', ['$scope', '$http', 'ModeloService', 'AreaProcessoService', function($scope, $http, modeloService, areaProcessoService) {
     function getAllModelos() {
         modeloService.getAll().then(function(response) {
             $scope.retrievedModelos = response.data;
@@ -6,6 +6,11 @@ referenceModelRegisterModule.controller('ModeloController', ['$scope', '$http', 
             console.log('Error');
         });
     };
+    areaProcessoService.getAll().then(function(response) {
+        $scope.areaProcessos = response.data;
+        }, function() {
+            console.log('Error');
+    });
 
     $scope.retrievedModelos = [];
     $scope.modelo = {};
