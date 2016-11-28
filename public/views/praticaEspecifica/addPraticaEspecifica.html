@@ -1,0 +1,34 @@
+<div>
+	<a ng-href="#/listPraticaEspecifica" class="btn btn-primary">
+		Voltar
+	</a>
+</div>
+<div>
+	<div ng-controller="PraticaEspecificaController">
+
+		<br>
+		
+		<div class="jumbotron">
+			<h1 class="text-center">
+				Adicionando Prática Especifica
+			</h1>
+		</div>
+		<form novalidate>
+		  	<div class="form-group">
+	    		<label for="sigla">Sigla</label>
+				<input class="form-control" id="sigla" ng-model="praticaEspecifica.sigla"> </input><br>
+	    		<label for="nome">Nome</label>
+				<input class="form-control" id="nome" ng-model="praticaEspecifica.nome"> </input><br>
+	    		<label for="descricao">Descrição</label>
+				<input class="form-control" id="descricao" ng-model="praticaEspecifica.descricao"> </input><br>
+
+				<div>
+					<a ng-href="#/listPraticaEspecifica" class="btn btn-primary" ng-click="save()"> 
+						Cadastrar	
+					</a>
+				</div>
+			<div>
+		</form>
+
+	</div>
+</div>

@@ -10,7 +10,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/listModelo.html'
         });
         $routeProvider.when('/listNivelMaturidade', {
-            templateUrl: 'views/listNivelMaturidade.html'
+            templateUrl: 'views/nivelMaturidade/listNivelMaturidade.html'
         });
         $routeProvider.when('/listProdutoTrabalho', {
             templateUrl: 'views/listProdutoTrabalho.html'
@@ -22,10 +22,10 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/metaEspecifica/listMetaEspecifica.html'
         });
         $routeProvider.when('/listNivelCapacidade', {
-            templateUrl: 'views/listNivelCapacidade.html'
+            templateUrl: 'views/nivelCapacidade/listNivelCapacidade.html'
         });
         $routeProvider.when('/listPraticaEspecifica', {
-            templateUrl: 'views/listPraticaEspecifica.html'
+            templateUrl: 'views/praticaEspecifica/listPraticaEspecifica.html'
         });
         $routeProvider.when('/addAreaProcesso', {
             templateUrl: 'views/areaProcesso/addAreaProcesso.html'
@@ -37,7 +37,7 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/addModelo.html'
         });
         $routeProvider.when('/addNivelMaturidade', {
-            templateUrl: 'views/addNivelMaturidade.html'
+            templateUrl: 'views/nivelMaturidade/addNivelMaturidade.html'
         });
         $routeProvider.when('/addProdutoTrabalho', {
             templateUrl: 'views/addProdutoTrabalho.html'
@@ -49,10 +49,10 @@ referenceModelRegisterModule.config(function($routeProvider){
             templateUrl: 'views/metaEspecifica/addMetaEspecifica.html'
         });
         $routeProvider.when('/addNivelCapacidade', {
-            templateUrl: 'views/addNivelCapacidade.html'
+            templateUrl: 'views/nivelCapacidade/addNivelCapacidade.html'
         });
         $routeProvider.when('/addPraticaEspecifica', {
-            templateUrl: 'views/addPraticaEspecifica.html'
+            templateUrl: 'views/praticaEspecifica/addPraticaEspecifica.html'
         });
 
         $routeProvider.when('/', {

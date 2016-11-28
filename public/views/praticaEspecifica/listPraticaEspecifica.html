@@ -1,0 +1,27 @@
+<div ng-controller="PraticaEspecificaController">
+    <div class="jumbotron">
+        <h1 class="text-center">
+            Prática Especifica
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingPraticaEspecifica in retrievedPraticaEspecificas">
+                <td>{{ existingPraticaEspecifica.sigla }}</td>
+                <td>{{ existingPraticaEspecifica.nome }}</td>
+                <td>{{ existingPraticaEspecifica.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <a ng-href="#/addPraticaEspecifica" class="btn btn-primary">
+        Cadastrar
+    </a>
+</div>
