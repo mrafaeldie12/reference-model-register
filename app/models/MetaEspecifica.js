@@ -4,7 +4,10 @@ var mongoose = require('mongoose'),
 var metaEspecificaSchema = new Schema({
   sigla: String,
   nome: String,
-  descricao: String
+  descricao: String,
+  _praticaEspecifica : [
+    { type : Schema.ObjectId, ref : 'PraticaEspecifica' }
+  ]
 });
 
 mongoose.model('MetaEspecifica', metaEspecificaSchema);
