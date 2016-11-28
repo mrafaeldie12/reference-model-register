@@ -21,6 +21,11 @@
 				<input class="form-control" id="nome" ng-model="areaProcesso.nome"> </input><br>
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="areaProcesso.descricao"> </input><br>
+				<label for="categoria">Categoria</label><br>
+				<select ng-model="modelo._categoria">
+					<option ng-repeat="x in categorias" value="{{x._id}}">{{x.nome}}</option>
+				</select>
+				<br><br><br><br><br>
 
 				<div>
 					<a ng-href="#/listAreaProcesso" class="btn btn-primary" ng-click="save()"> 
