@@ -1,4 +1,4 @@
-referenceModelRegisterModule.controller('PraticaEspecificaController', ['$scope', '$http', 'PraticaEspecificaService', function($scope, $http, praticaEspecificaService) {
+referenceModelRegisterModule.controller('PraticaEspecificaController', ['$scope', '$http', 'PraticaEspecificaService', 'ProdutoTrabalhoService',  function($scope, $http, praticaEspecificaService, produtoTrabalhoService) {
     function getAllPraticaEspecificas() {
         praticaEspecificaService.getAll().then(function(response) {
             $scope.retrievedPraticaEspecificas = response.data;
@@ -6,6 +6,12 @@ referenceModelRegisterModule.controller('PraticaEspecificaController', ['$scope'
             console.log('Error');
         });
     };
+
+    produtoTrabalhoService.getAll().then(function(response) {
+        $scope.produtoTrabalhos = response.data;
+    }, function() {
+        console.log('Error');
+    });
 
     $scope.retrievedPraticaEspecificas = [];
     $scope.praticaEspecifica = {};

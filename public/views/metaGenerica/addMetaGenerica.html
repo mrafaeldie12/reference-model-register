@@ -21,11 +21,10 @@
 				<input class="form-control" id="nome" ng-model="metaGenerica.nome"> </input><br>
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="metaGenerica.descricao"> </input><br>
-				<label for="metaEspecifica">Nível de Capacidade</label>
-				<select ng-model="modelo._nivelCapacidade">
-					<option ng-repeat="x in nivelCapacidade" value="{{x._id}}">{{x.nome}}</option>
+				<label for="nivelCapacidade">Nível Capacidade</label>
+				<select ng-model="metaGenerica._nivelCapacidade" id="nivelCapacidade">
+					<option ng-repeat="nivelCapacidade in nivelCapacidades" value="{{nivelCapacidade._id}}">{{nivelCapacidade.nome}}</option>
 				</select>
-				<br><br><br><br><br>
 				<div>
 					<a ng-href="#/listMetaGenerica" class="btn btn-primary" ng-click="save()"> 
 						Cadastrar	

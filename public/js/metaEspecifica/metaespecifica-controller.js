@@ -1,4 +1,4 @@
-referenceModelRegisterModule.controller('MetaEspecificaController', ['$scope', '$http', 'MetaEspecificaService', function($scope, $http, metaEspecificaService) {
+referenceModelRegisterModule.controller('MetaEspecificaController', ['$scope', '$http', 'MetaEspecificaService', 'PraticaEspecificaService', function($scope, $http, metaEspecificaService, praticaEspecificaService) {
     function getAllMetaEspecificas() {
         metaEspecificaService.getAll().then(function(response) {
             $scope.retrievedMetaEspecificas = response.data;
@@ -6,6 +6,12 @@ referenceModelRegisterModule.controller('MetaEspecificaController', ['$scope', '
             console.log('Error');
         });
     };
+
+    praticaEspecificaService.getAll().then(function(response) {
+            $scope.praticaEspecificas = response.data;
+        }, function() {
+            console.log('Error');
+    });
 
     $scope.retrievedMetaEspecificas = [];
     $scope.metaEspecifica = {};
@@ -37,6 +43,8 @@ referenceModelRegisterModule.controller('MetaEspecificaController', ['$scope', '
 
         getAllMetaEspecificas();
     };
+
+
     
     $scope.getAll = function(){
     	getAllMetaEspecificas();

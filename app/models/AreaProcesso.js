@@ -10,7 +10,10 @@ var areaProcessoSchema = new Schema({
   nome: String,
   descricao: String,
   _categoria: {type : Schema.ObjectId, ref : 'Categoria'},
-  _nivelMaturidade: {type : Schema.ObjectId, ref : 'NivelMaturidade'}
+  _nivelMaturidade: {type : Schema.ObjectId, ref : 'NivelMaturidade'},
+  _metaEspecifica : [
+    { type : Schema.ObjectId, ref : 'MetaEspecifica' }
+  ]
 });
 
 mongoose.model('AreaProcesso', areaProcessoSchema);

@@ -11,12 +11,16 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Nível de Maturidade</th>
             </tr>
 
             <tr ng-repeat="existingAreaProcesso in retrievedAreaProcessos">
                 <td>{{ existingAreaProcesso.sigla }}</td>
                 <td>{{ existingAreaProcesso.nome }}</td>
                 <td>{{ existingAreaProcesso.descricao }}</td>
+                <td>{{ existingAreaProcesso._categoria.nome }}</td>
+                <td>{{ existingAreaProcesso._nivelMaturidade.nome }}</td>
             </tr>
 
         </table>

@@ -6,12 +6,12 @@ referenceModelRegisterModule.controller('MetaGenericaController', ['$scope', '$h
             console.log('Error');
         });
     };
-     nivelCapacidadeService.getAll().then(function(response) {
-        $scope.nivelCapacidade = response.data;
+    nivelCapacidadeService.getAll().then(function(response) {
+        $scope.nivelCapacidades = response.data;
         }, function() {
             console.log('Error');
     });
-
+    
     $scope.retrievedMetaGenericas = [];
     $scope.metaGenerica = {};
 

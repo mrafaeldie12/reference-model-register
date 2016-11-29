@@ -8,7 +8,7 @@
   };
 
   router.get('/', function (req, res, next) {
-    AreaProcesso.find(function(err, existingAreaProcessos) {
+    AreaProcesso.find().populate('_categoria _nivelMaturidade _metaEspecifica').exec(function(err, existingAreaProcessos) {
           if (err) {
               res.status('500');
               console.error(err);
@@ -21,7 +21,7 @@
   });
 
 router.get('/:id', function (req, res, next) {
-  AreaProcesso.findOne({ _id : req.params.id }).populate('_categoria _nivelMaturidade').exec(function(err, existingAreaProcesso) {
+  AreaProcesso.findOne({ _id : req.params.id }).populate('_categoria _nivelMaturidade _metaEspecifica').exec(function(err, existingAreaProcesso) {
         if (err) {
             res.status('500');
             console.error(err);

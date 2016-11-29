@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
 var praticaEspecificaSchema = new Schema({
   sigla: String,
   nome: String,
-  descricao: String
+  descricao: String,
+  _produtoTrabalho: {type : Schema.ObjectId, ref : 'ProdutoTrabalho'}
 });
 
 mongoose.model('PraticaEspecifica', praticaEspecificaSchema);

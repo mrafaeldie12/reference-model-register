@@ -14,25 +14,40 @@
 			</h1>
 		</div>
 		<form novalidate>
-		  	<div class="form-group">
-	    		<label for="sigla">Sigla</label>
+			<div class="form-group">
+				<label for="sigla">Sigla</label>
 				<input class="form-control" id="sigla" ng-model="areaProcesso.sigla"> </input><br>
-	    		<label for="nome">Nome</label>
+				<label for="nome">Nome</label>
 				<input class="form-control" id="nome" ng-model="areaProcesso.nome"> </input><br>
-	    		<label for="descricao">Descrição</label>
+				<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="areaProcesso.descricao"> </input><br>
-				<label for="categoria">Categoria</label><br>
-				<select ng-model="modelo._categoria">
-					<option ng-repeat="x in categorias" value="{{x._id}}">{{x.nome}}</option>
-				</select>
-				<br><br><br><br><br>
+				<div>
+					<label for="categoria">Categoria</label>
+					<select ng-model="areaProcesso._categoria" id="categoria">
+						<option ng-repeat="categoria in categorias" value="{{categoria._id}}">{{categoria.nome}}</option>
+					</select>
+				</div>
+				<div> 
+					<label for="nivelMaturidade">Nível de Maturidade</label>
+					<select ng-model="areaProcesso._nivelMaturidade" id="nivelMaturidade">
+						<option ng-repeat="nivelMaturidade in nivelMaturidades" value="{{nivelMaturidade._id}}">{{nivelMaturidade.nome}}</option>
+					</select>
+				</div>
+				<div>
+					<label for="metaEspecifica">Metas Específicas</label>
+					<div>
+						<select ng-model="areaProcesso._metaEspecifica" multiple id="metaEspecifica">
+							<option ng-repeat="metaEspecifica in metaEspecificas" value="{{metaEspecifica._id}}">{{metaEspecifica.nome}}</option>
+						</select>
+					</div>
+				</div>
 
 				<div>
 					<a ng-href="#/listAreaProcesso" class="btn btn-primary" ng-click="save()"> 
 						Cadastrar	
 					</a>
 				</div>
-			<div>
+			</div>
 		</form>
 
 	</div>

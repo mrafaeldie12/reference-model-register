@@ -4,11 +4,11 @@ var express = require('express'),
   MetaEspecifica = mongoose.model('MetaEspecifica');
 
 module.exports = function (app) {
-  app.use('/rest/MetaEspecifica', router);
+  app.use('/rest/metaEspecifica', router);
 };
 
 router.get('/', function (req, res, next) {
-  MetaEspecifica.find(function(err, existingMetaEspecificas) {
+  MetaEspecifica.find().populate('_praticaEspecifica').exec(function(err, existingMetaEspecificas){
         if (err) {
             res.status('500');
             console.error(err);
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  MetaEspecifica.findOne({ _id : req.params.id }, function(err, existingMetaEspecifica) {
+  MetaEspecifica.findOne({ _id : req.params.id }).populate('_praticaEspecifica').exec(function(err, existingMetaEspecifica) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -56,6 +56,7 @@ router.put('/', function (req, res, next) {
             existingMetaEspecifica.sigla = req.body.sigla;
             existingMetaEspecifica.nome = req.body.nome;
             existingMetaEspecifica.descricao = req.body.descricao;
+            existingMetaEspecifica._praticaEspecifica = req.body._praticaEspecifica;
 
             existingMetaEspecifica.save();
 

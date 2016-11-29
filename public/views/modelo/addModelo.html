@@ -14,26 +14,28 @@
 			</h1>
 		</div>
 		<form novalidate>
-		  	<div class="form-group">
-	    		<label for="sigla">Sigla</label>
+			<div class="form-group">
+				<label for="sigla">Sigla</label>
 				<input class="form-control" id="sigla" ng-model="modelo.sigla"> </input><br>
-	    		<label for="nome">Nome</label>
+				<label for="nome">Nome</label>
 				<input class="form-control" id="nome" ng-model="modelo.nome"> </input><br>
-	    		<label for="descricao">Descrição</label>
+				<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="modelo.descricao"> </input><br>
 
-				<select ng-model="modelo._areasDeProcesso">
-					<option ng-repeat="x in areaProcessos" value="{{x._id}}">{{x.nome}}</option>
-				</select>
-				<br><br><br><br><br>
+				<label for="areaProcesso">Áreas de Processo</label>
+				<div>
+					<select ng-model="modelo._areaProcesso" multiple id="areaProcesso">
+						<option ng-repeat="areaProcesso in areaProcessos" value="{{areaProcesso._id}}">{{areaProcesso.nome}}</option>
+					</select>
+				</div>
 
 				<div>
 					<a ng-href="#/listModelo" class="btn btn-primary" ng-click="save()"> 
 						Cadastrar	
 					</a>
 				</div>
-			<div>
-		</form>
+				<div>
+				</form>
 
-	</div>
-</div>
+			</div>
+		</div>

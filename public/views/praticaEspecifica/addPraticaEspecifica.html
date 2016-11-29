@@ -21,6 +21,14 @@
 				<input class="form-control" id="nome" ng-model="praticaEspecifica.nome"> </input><br>
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="praticaEspecifica.descricao"> </input><br>
+				<div>
+					<label for="produtoTrabalho">Produtos de Trabalho</label>
+					<div>
+						<select ng-model="praticaEspecifica._produtoTrabalho" multiple id="produtoTrabalho">
+							<option ng-repeat="produtoTrabalho in produtoTrabalhos" value="{{produtoTrabalho._id}}">{{produtoTrabalho.nome}}</option>
+						</select>
+					</div>
+				</div>
 
 				<div>
 					<a ng-href="#/listPraticaEspecifica" class="btn btn-primary" ng-click="save()"> 

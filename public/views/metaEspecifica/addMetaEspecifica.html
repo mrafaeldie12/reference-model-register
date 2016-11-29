@@ -5,9 +5,6 @@
 </div>
 <div>
 	<div ng-controller="MetaEspecificaController">
-
-		<br>
-		
 		<div class="jumbotron">
 			<h1 class="text-center">
 				Adicionando Meta Especifica
@@ -21,7 +18,15 @@
 				<input class="form-control" id="nome" ng-model="metaEspecifica.nome"> </input><br>
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="metaEspecifica.descricao"> </input><br>
-
+				
+				<div>
+					<label for="praticaEspecifica">Práticas Específicas</label>
+					<div>
+						<select ng-model="metaEspecifica._praticaEspecifica" multiple id="praticaEspecifica">
+							<option ng-repeat="praticaEspecifica in praticaEspecificas" value="{{praticaEspecifica._id}}">{{praticaEspecifica.nome}}</option>
+						</select>
+					</div>
+				</div>
 				<div>
 					<a ng-href="#/listMetaEspecifica" class="btn btn-primary" ng-click="save()"> 
 						Cadastrar	
