@@ -1,6 +1,8 @@
 var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
+    PDFDocument = require('pdfkit')
+    fileSystem = require('fs'),
     Modelo = mongoose.model('Modelo');
 
 module.exports = function(app) {
@@ -110,9 +112,19 @@ router.get('/form/:id', function(req, res, next) {
             res.status('500');
             console.error(err);
         } else {
-            res.send(existingModelo);
-            console.log(existingModelo);
+            var pdfDocument = new PDFDocument();
+
+            pdfDocument.pipe(res, function(){
+                res.end();
+            });
+
+            pdfDocument.fontSize(22);
+            pdfDocument.text(existingModelo.nome);
+            pdfDocument.text(existingModelo.sigla);
+            pdfDocument.text(existingModelo.descricao);
+            pdfDocument.end();
+            
+            //res.download(pdfFileName);
         }
-        res.end();
     });
 });
