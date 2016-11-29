@@ -8,7 +8,7 @@ module.exports = function (app) {
 };
 
 router.get('/', function (req, res, next) {
-  PraticaEspecifica.find(function(err, existingPraticaEspecificas) {
+  PraticaEspecifica.find().populate('_produtoTrabalho').exec(function(err, existingPraticaEspecificas) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-  PraticaEspecifica.findOne({ _id : req.params.id }, function(err, existingPraticaEspecifica) {
+  PraticaEspecifica.findOne({ _id : req.params.id }).populate('_produtoTrabalho').exec(function(err, existingPraticaEspecifica) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -56,6 +56,7 @@ router.put('/', function (req, res, next) {
             existingPraticaEspecifica.sigla = req.body.sigla;
             existingPraticaEspecifica.nome = req.body.nome;
             existingPraticaEspecifica.descricao = req.body.descricao;
+            existingPraticaEspecifica._produtoTrabalho = req.body._produtoTrabalho;
 
             existingPraticaEspecifica.save();
 
