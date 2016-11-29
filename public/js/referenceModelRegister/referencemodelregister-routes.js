@@ -54,6 +54,34 @@ referenceModelRegisterModule.config(function($routeProvider){
         $routeProvider.when('/addPraticaEspecifica', {
             templateUrl: 'views/praticaEspecifica/addPraticaEspecifica.html'
         });
+//Mostra individual'
+        $routeProvider.when('/mostraAreaProcesso/:id', {
+            templateUrl: 'views/areaProcesso/mostraAreaProcesso.html'
+        });
+        $routeProvider.when('/mostraCategoria/:id', {
+            templateUrl: 'views/categoria/mostraCategoria.html'
+        });
+        $routeProvider.when('/mostraMetaEspecifica/:id', {
+            templateUrl: 'views/metaEspecifica/mostraMetaEspecifica.html'
+        });
+        $routeProvider.when('/mostraMetaGenerica/:id', {
+            templateUrl: 'views/metaGenerica/mostraMetaGenerica.html'
+        });
+        $routeProvider.when('/mostraModelo/:id', {
+            templateUrl: 'views/modelo/mostraModelo.html'
+        });
+        $routeProvider.when('/mostraNivelCapacidade/:id', {
+            templateUrl: 'views/nivelCapacidade/mostraNivelCapacidade.html'
+        });
+        $routeProvider.when('/mostraNivelMaturidade/:id', {
+            templateUrl: 'views/nivelMaturidade/mostraNivelMaturidade.html'
+        });
+        $routeProvider.when('/mostraPraticaEspecifica/:id', {
+            templateUrl: 'views/praticaEspecifica/mostraPraticaEspecifica.html'
+        });
+        $routeProvider.when('/mostraProdutoTrabalho/:id', {
+            templateUrl: 'views/produtoTrabalho/mostraProdutoTrabalho.html'
+        });
 
         $routeProvider.when('/', {
             templateUrl: 'views/main.html'

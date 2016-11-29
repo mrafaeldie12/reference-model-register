@@ -11,14 +11,15 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th>Ações</th>
             </tr>
 
             <tr ng-repeat="existingModelo in retrievedModelos">
                 <td>{{ existingModelo.sigla }}</td>
                 <td>{{ existingModelo.nome }}</td>
                 <td>{{ existingModelo.descricao }}</td>
+                <td><a ng-href="#/mostraModelo/:"+{{ existingModelo.id }} class="btn btn-primary">Visualizar</a></td>
             </tr>
-
         </table>
     </div>
     <a ng-href="#/addModelo" class="btn btn-primary">
