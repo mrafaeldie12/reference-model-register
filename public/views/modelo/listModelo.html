@@ -19,6 +19,7 @@
                 <td>{{ existingModelo.nome }}</td>
                 <td>{{ existingModelo.descricao }}</td>
                 <td><a ng-href="#/mostraModelo/:"+{{ existingModelo.id }} class="btn btn-primary">Visualizar</a></td>
+                <td><a class="btn btn-danger" ng-click="delete(existingModelo)">Deletar	</a></td>
             </tr>
         </table>
     </div>

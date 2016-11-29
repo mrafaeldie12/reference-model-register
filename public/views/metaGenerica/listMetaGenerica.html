@@ -12,6 +12,7 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Nível de Capacidade</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingMetaGenerica in retrievedMetaGenericas">
@@ -19,6 +20,11 @@
                 <td>{{ existingMetaGenerica.nome }}</td>
                 <td>{{ existingMetaGenerica.descricao }}</td>
                 <td>{{ existingMetaGenerica._nivelCapacidade.nome }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingMetaGenerica)"> 
+						Deletar	
+					<a>
+                </td> 
             </tr>
 
         </table>

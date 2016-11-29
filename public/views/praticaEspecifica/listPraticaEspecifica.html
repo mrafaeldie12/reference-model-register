@@ -11,12 +11,18 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingPraticaEspecifica in retrievedPraticaEspecificas">
                 <td>{{ existingPraticaEspecifica.sigla }}</td>
                 <td>{{ existingPraticaEspecifica.nome }}</td>
                 <td>{{ existingPraticaEspecifica.descricao }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingPraticaEspecifica)"> 
+						Deletar	
+					<a>
+                </td>
             </tr>
 
         </table>

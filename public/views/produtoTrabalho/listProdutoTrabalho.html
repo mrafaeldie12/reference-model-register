@@ -10,11 +10,17 @@
             <tr>
                 <th>Nome</th>
                 <th>Template</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingProdutoTrabalho in retrievedProdutoTrabalhos">
                 <td>{{ existingProdutoTrabalho.nome }}</td>
                 <td>{{ existingProdutoTrabalho.template }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingProdutoTrabalho)"> 
+						Deletar	
+					<a>
+                </td>
             </tr>
 
         </table>
