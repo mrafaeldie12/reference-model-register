@@ -18,6 +18,7 @@
                 <td>{{ existingNivelCapacidade.sigla }}</td>
                 <td>{{ existingNivelCapacidade.nome }}</td>
                 <td>{{ existingNivelCapacidade.descricao }}</td>
+                <td><a ng-href="#/mostraNivelCapacidade/:"+{{ existingNivelCapacidade.id }} class="btn btn-primary">Visualizar</a></td>
                 <td>
                     <a class="btn btn-danger" ng-click="delete(existingNivelCapacidade)"> 
 						Deletar	

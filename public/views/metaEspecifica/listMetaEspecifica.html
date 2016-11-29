@@ -18,6 +18,7 @@
                 <td>{{ existingMetaEspecifica.sigla }}</td>
                 <td>{{ existingMetaEspecifica.nome }}</td>
                 <td>{{ existingMetaEspecifica.descricao }}</td>
+                <td><a ng-href="#/mostraMetaEspecifica/:"+{{ existingMetaEspecifica.id }} class="btn btn-primary">Visualizar</a></td>
                 <td>
                     <a class="btn btn-danger" ng-click="delete(existingMetaEspecifica)"> 
 						Deletar	

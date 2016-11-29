@@ -16,6 +16,7 @@
             <tr ng-repeat="existingProdutoTrabalho in retrievedProdutoTrabalhos">
                 <td>{{ existingProdutoTrabalho.nome }}</td>
                 <td>{{ existingProdutoTrabalho.template }}</td>
+                <td><a ng-href="#/mostraProdutoTrabalho/:"+{{ existingProdutoTrabalho.id }} class="btn btn-primary">Visualizar</a></td>
                 <td>
                     <a class="btn btn-danger" ng-click="delete(existingProdutoTrabalho)"> 
 						Deletar	

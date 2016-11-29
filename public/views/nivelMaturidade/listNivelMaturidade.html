@@ -18,6 +18,7 @@
                 <td>{{ existingNivelMaturidade.sigla }}</td>
                 <td>{{ existingNivelMaturidade.nome }}</td>
                 <td>{{ existingNivelMaturidade.descricao }}</td>
+                <td><a ng-href="#/mostraNivelMaturidade/:"+{{ existingNivelMaturidade.id }} class="btn btn-primary">Visualizar</a></td>
                 <td>
                     <a class="btn btn-danger" ng-click="delete(existingNivelMaturidade)"> 
 						Deletar	
