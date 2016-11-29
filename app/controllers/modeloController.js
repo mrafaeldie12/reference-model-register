@@ -118,10 +118,25 @@ router.get('/form/:id', function(req, res, next) {
                 res.end();
             });
 
-            pdfDocument.fontSize(22);
-            pdfDocument.text(existingModelo.nome);
-            pdfDocument.text(existingModelo.sigla);
+            pdfDocument.fontSize(26)
+            .text(existingModelo.nome)
+            .fontSize(24)
+            .text('\nInformações:')
+            .fontSize(22)
+            .text(existingModelo.sigla)
+            .text(existingModelo.descricao)
+            .text('\nÁreas de Processo:');
+            for(var index=0; index < existingModelo._areaProcesso.length; index++)
+            {
+                var areaProcesso = existingModelo._areaProcesso[index];
+                pdfDocument.text('Descrição: ' + areaProcesso.sigla)
+                .text('Nome: ' + areaProcesso.nome)
+                .text('Descrição: ' + areaProcesso.descricao)
+                .text('\n');
+            }
+
             pdfDocument.text(existingModelo.descricao);
+
             pdfDocument.end();
             
             //res.download(pdfFileName);
