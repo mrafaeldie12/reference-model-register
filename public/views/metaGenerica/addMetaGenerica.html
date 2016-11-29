@@ -21,9 +21,9 @@
 				<input class="form-control" id="nome" ng-model="metaGenerica.nome"> </input><br>
 	    		<label for="descricao">Descrição</label>
 				<input class="form-control" id="descricao" ng-model="metaGenerica.descricao"> </input><br>
-				<label for="metaEspecifica">Meta Específica</label>
-				<select ng-model="metaGenerica._metaEspecifica" multiple>
-					<option ng-repeat="x in metaEspecifica" value="{{x._id}}">{{x.nome}}</option>
+				<label for="nivelCapacidade">Nível Capacidade</label>
+				<select ng-model="metaGenerica._nivelCapacidade" id="nivelCapacidade">
+					<option ng-repeat="nivelCapacidade in nivelCapacidades" value="{{nivelCapacidade._id}}">{{nivelCapacidade.nome}}</option>
 				</select>
 				<div>
 					<a ng-href="#/listMetaGenerica" class="btn btn-primary" ng-click="save()"> 
