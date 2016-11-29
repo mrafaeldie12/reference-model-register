@@ -15,7 +15,7 @@
             <tr ng-repeat="existingCategoria in retrievedCategorias">
                 <td>{{ existingCategoria.nome }}</td>
                 <td>
-                    <a ng-href="#/mostraCategoria/:"+{{ existingCategoria.id }} class="btn btn-default">Visualizar</a>
+                    <a ng-href="#/mostraCategoria/{{ existingCategoria.id }}" class="btn btn-default">Visualizar</a>
                     <a class="btn btn-danger" ng-click="delete(existingCategoria)"> 
 						Deletar	
 					<a>

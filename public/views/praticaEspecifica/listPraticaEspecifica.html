@@ -19,7 +19,7 @@
                 <td>{{ existingPraticaEspecifica.nome }}</td>
                 <td>{{ existingPraticaEspecifica.descricao }}</td>
                 <td>
-                    <a ng-href="#/mostraPraticaEspecifica/:"+{{ existingPraticaEspecifica.id }} class="btn btn-default">Visualizar</a>
+                    <a ng-href="#/mostraPraticaEspecifica/{{ existingPraticaEspecifica.id }}" class="btn btn-default">Visualizar</a>
                     <a class="btn btn-danger" ng-click="delete(existingPraticaEspecifica)"> 
 						Deletar	
 					<a>

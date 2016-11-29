@@ -19,7 +19,7 @@
                 <td>{{ existingMetaEspecifica.nome }}</td>
                 <td>{{ existingMetaEspecifica.descricao }}</td>
                 <td>
-                    <a ng-href="#/mostraMetaEspecifica/:"+{{ existingMetaEspecifica.id }} class="btn btn-default">Visualizar</a>
+                    <a ng-href="#/mostraMetaEspecifica/{{ existingMetaEspecifica.id }}" class="btn btn-default">Visualizar</a>
                     <a class="btn btn-danger" ng-click="delete(existingMetaEspecifica)"> 
 						Deletar	
 					<a>
