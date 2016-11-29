@@ -82,6 +82,9 @@ referenceModelRegisterModule.config(function($routeProvider){
         $routeProvider.when('/mostraProdutoTrabalho/:id', {
             templateUrl: 'views/produtoTrabalho/mostraProdutoTrabalho.html'
         });
+         $routeProvider.when('/listEverything', {
+            templateUrl: 'views/everything/listEverything.html'
+        });
 
         $routeProvider.when('/', {
             templateUrl: 'views/main.html'

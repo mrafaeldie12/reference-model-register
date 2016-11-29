@@ -1,0 +1,200 @@
+<div class="jumbotron">
+    <h1 class="text-center">
+        Modelo Completo
+    </h1>
+</div>
+
+
+<div ng-controller="ModeloController">
+    <h3>Modelo</h3>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingModelo in retrievedModelos">
+                <td>{{ existingModelo.sigla }}</td>
+                <td>{{ existingModelo.nome }}</td>
+                <td>{{ existingModelo.descricao }}</td>        
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div ng-controller="CategoriaController">
+    <h3>Categorias</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Nome</th>           
+            </tr>
+
+            <tr ng-repeat="existingCategoria in retrievedCategorias">
+                <td>{{ existingCategoria.nome }}</td>         
+            </tr>
+
+        </table>
+    </div>    
+</div>
+
+<div ng-controller="NivelCapacidadeController">
+    <h3>Níveis de Capacidade</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingNivelCapacidade in retrievedNivelCapacidades">
+                <td>{{ existingNivelCapacidade.sigla }}</td>
+                <td>{{ existingNivelCapacidade.nome }}</td>
+                <td>{{ existingNivelCapacidade.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+
+<div ng-controller="MetaGenericaController">
+    <h3>Metas Genéricas</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Nível de Capacidade</th>                
+            </tr>
+
+            <tr ng-repeat="existingMetaGenerica in retrievedMetaGenericas">
+                <td>{{ existingMetaGenerica.sigla }}</td>
+                <td>{{ existingMetaGenerica.nome }}</td>
+                <td>{{ existingMetaGenerica.descricao }}</td>
+                <td>{{ existingMetaGenerica._nivelCapacidade.nome }}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-controller="NivelMaturidadeController">
+    <h3>Níveis de Maturidade</h1>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingNivelMaturidade in retrievedNivelMaturidades">
+                <td>{{ existingNivelMaturidade.sigla }}</td>
+                <td>{{ existingNivelMaturidade.nome }}</td>
+                <td>{{ existingNivelMaturidade.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-controller="ProdutoTrabalhoController">
+    <h3>Produtos de Trabalho</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Nome</th>
+                <th>Template</th>
+            </tr>
+
+            <tr ng-repeat="existingProdutoTrabalho in retrievedProdutoTrabalhos">
+                <td>{{ existingProdutoTrabalho.nome }}</td>
+                <td>{{ existingProdutoTrabalho.template }}</td> 
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-controller="PraticaEspecificaController">
+    <h3>Práticas Específicas</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>       
+            </tr>
+
+            <tr ng-repeat="existingPraticaEspecifica in retrievedPraticaEspecificas">
+                <td>{{ existingPraticaEspecifica.sigla }}</td>
+                <td>{{ existingPraticaEspecifica.nome }}</td>
+                <td>{{ existingPraticaEspecifica.descricao }}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-controller="MetaEspecificaController">
+    <h3>Metas Específicas</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+
+            <tr ng-repeat="existingMetaEspecifica in retrievedMetaEspecificas">
+                <td>{{ existingMetaEspecifica.sigla }}</td>
+                <td>{{ existingMetaEspecifica.nome }}</td>
+                <td>{{ existingMetaEspecifica.descricao }}</td> 
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-controller="AreaProcessoController">
+    <h3>Áreas de Processo</h3>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                <th>Sigla</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Nível de Maturidade</th>          
+            </tr>
+
+            <tr ng-repeat="existingAreaProcesso in retrievedAreaProcessos">
+                <td>{{ existingAreaProcesso.sigla }}</td>
+                <td>{{ existingAreaProcesso.nome }}</td>
+                <td>{{ existingAreaProcesso.descricao }}</td>
+                <td>{{ existingAreaProcesso._categoria.nome }}</td>
+                <td>{{ existingAreaProcesso._nivelMaturidade.nome }}</td>   
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" ng-click="exportPDFhere()"> 
+	    Exportar Modelo	
+	</a>
+</div>
