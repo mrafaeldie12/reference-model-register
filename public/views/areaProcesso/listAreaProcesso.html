@@ -13,7 +13,7 @@
                 <th>Descrição</th>
                 <th>Categoria</th>
                 <th>Nível de Maturidade</th>
-                <th></th>
+                <th>Ações</th>
             </tr>
 
             <tr ng-repeat="existingAreaProcesso in retrievedAreaProcessos">
@@ -22,8 +22,8 @@
                 <td>{{ existingAreaProcesso.descricao }}</td>
                 <td>{{ existingAreaProcesso._categoria.nome }}</td>
                 <td>{{ existingAreaProcesso._nivelMaturidade.nome }}</td>
-                <td><a ng-href="#/mostraAreaProcesso/:"+{{ existingAreaProcesso.id }} class="btn btn-primary">Visualizar</a></td>
                 <td>
+                    <a ng-href="#/mostraAreaProcesso/:"+{{ existingAreaProcesso.id }} class="btn btn-default">Visualizar</a>
                     <a class="btn btn-danger" ng-click="delete(existingAreaProcesso)"> 
 						Deletar	
 					<a>
