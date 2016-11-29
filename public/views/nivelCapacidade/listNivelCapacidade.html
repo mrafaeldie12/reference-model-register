@@ -11,12 +11,18 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingNivelCapacidade in retrievedNivelCapacidades">
                 <td>{{ existingNivelCapacidade.sigla }}</td>
                 <td>{{ existingNivelCapacidade.nome }}</td>
                 <td>{{ existingNivelCapacidade.descricao }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingNivelCapacidade)"> 
+						Deletar	
+					<a>
+                </td> 
             </tr>
 
         </table>

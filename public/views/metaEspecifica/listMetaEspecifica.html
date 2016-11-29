@@ -11,12 +11,18 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingMetaEspecifica in retrievedMetaEspecificas">
                 <td>{{ existingMetaEspecifica.sigla }}</td>
                 <td>{{ existingMetaEspecifica.nome }}</td>
                 <td>{{ existingMetaEspecifica.descricao }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingMetaEspecifica)"> 
+						Deletar	
+					<a>
+                </td>  
             </tr>
 
         </table>

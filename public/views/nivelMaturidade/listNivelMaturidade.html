@@ -11,12 +11,18 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th><th>
             </tr>
 
             <tr ng-repeat="existingNivelMaturidade in retrievedNivelMaturidades">
                 <td>{{ existingNivelMaturidade.sigla }}</td>
                 <td>{{ existingNivelMaturidade.nome }}</td>
                 <td>{{ existingNivelMaturidade.descricao }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingNivelMaturidade)"> 
+						Deletar	
+					<a>
+                </td>
             </tr>
 
         </table>

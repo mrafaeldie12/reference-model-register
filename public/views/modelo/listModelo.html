@@ -11,12 +11,18 @@
                 <th>Sigla</th>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th></th>
             </tr>
 
             <tr ng-repeat="existingModelo in retrievedModelos">
                 <td>{{ existingModelo.sigla }}</td>
                 <td>{{ existingModelo.nome }}</td>
                 <td>{{ existingModelo.descricao }}</td>
+                <td>
+                    <a class="btn btn-danger" ng-click="delete(existingModelo)"> 
+						Deletar	
+					<a>
+                </td> 
             </tr>
 
         </table>
