@@ -54,7 +54,7 @@ referenceModelRegisterModule.config(function($routeProvider){
         $routeProvider.when('/addPraticaEspecifica', {
             templateUrl: 'views/praticaEspecifica/addPraticaEspecifica.html'
         });
-//Mostra individual'
+
         $routeProvider.when('/mostraAreaProcesso/:id', {
             templateUrl: 'views/areaProcesso/mostraAreaProcesso.html'
         });
