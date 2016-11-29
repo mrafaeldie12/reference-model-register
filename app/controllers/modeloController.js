@@ -1,14 +1,14 @@
 var express = require('express'),
-  router = express.Router(),
-  mongoose = require('mongoose'),
-  Modelo = mongoose.model('Modelo');
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    Modelo = mongoose.model('Modelo');
 
-module.exports = function (app) {
-  app.use('/rest/modelo', router);
+module.exports = function(app) {
+    app.use('/rest/modelo', router);
 };
 
-router.get('/', function (req, res, next) {
-  Modelo.find(function(err, existingModelos) {
+router.get('/', function(req, res, next) {
+    Modelo.find().populate('_areaProcesso').exec(function(err, existingModelos) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -20,8 +20,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.get('/:id', function (req, res, next) {
-  Modelo.findOne({ _id : req.params.id }).populate('_areasDeProcesso').exec( function(err, existingModelo) {
+router.get('/:id', function(req, res, next) {
+    Modelo.findOne({
+        _id: req.params.id
+    }).populate('_areaProcesso').exec(function(err, existingModelo) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -37,18 +39,20 @@ router.post('/', function(req, res, next) {
     var newModelo = new Modelo(req.body);
     newModelo.save(function(err) {
         if (err) {
-          res.status('500');
-          console.log(err);
+            res.status('500');
+            console.log(err);
         } else {
-          res.status('200');
-          console.log('Modelo saved. Payload:' + newModelo);
+            res.status('200');
+            console.log('Modelo saved. Payload:' + newModelo);
         }
         res.end();
     });
 });
 
-router.put('/', function (req, res, next) {
-  Modelo.findOne({ _id : req.body._id }, function(err, existingModelo) {
+router.put('/', function(req, res, next) {
+    Modelo.findOne({
+        _id: req.body._id
+    }, function(err, existingModelo) {
         if (err) {
             res.status('500');
             console.error(err);
@@ -72,10 +76,42 @@ router.delete('/:id', function(req, res, next) {
         _id: req.params.id
     }, function(err) {
         if (err) {
-          res.status('500');
-          console.log(err);
+            res.status('500');
+            console.log(err);
         } else {
-          res.status('200');
+            res.status('200');
+        }
+        res.end();
+    });
+});
+
+router.get('/form/:id', function(req, res, next) {
+    Modelo.findOne({
+        _id: req.params.id
+    }).populate({
+        path: '_areaProcesso',
+        populate: [{
+            path: '_metaEspecifica',
+            model: 'MetaEspecifica',
+            populate: {
+                path: '_praticaEspecifica',
+                model: 'PraticaEspecifica'
+            }
+        }, {
+            path: '_nivelMaturidade',
+            model: 'NivelMaturidade'
+        },
+        {
+            path: '_categoria',
+            model: 'Categoria'
+        }]
+    }).exec(function(err, existingModelo) {
+        if (err) {
+            res.status('500');
+            console.error(err);
+        } else {
+            res.send(existingModelo);
+            console.log(existingModelo);
         }
         res.end();
     });

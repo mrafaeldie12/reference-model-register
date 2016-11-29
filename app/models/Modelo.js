@@ -5,8 +5,8 @@ var modeloSchema = new Schema({
   sigla: String,
   nome: String,
   descricao: String,
-  _areasDeProcesso : [
-	{ type : Schema.ObjectId, ref : 'AreaDeProcesso' }
+  _areaProcesso : [
+	{ type : Schema.ObjectId, ref : 'AreaProcesso' }
   ]
 });
 
