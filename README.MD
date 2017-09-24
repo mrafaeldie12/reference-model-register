@@ -1,3 +1,7 @@
+# Reference Model Register
+
+Random project for the Software Improvement Models subject at Unisinos 2016/1
+
 ## Install
 
 Install items in this order:
@@ -50,7 +54,6 @@ gulp
 - MongoDB
 - NodeJS
 - Mongoose
-- Jade
 - Git
 
 ## Members

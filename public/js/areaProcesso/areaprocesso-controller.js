@@ -56,6 +56,10 @@ referenceModelRegisterModule.controller('AreaProcessoController', ['$scope', '$h
 
         getAllAreaProcessos();
     };
+
+    $scope.view = function(areaProcesso) {
+        $scope.selectedAreaProcesso = areaProcesso;
+    };
     
     $scope.getAll = function(){
     	getAllAreaProcessos();

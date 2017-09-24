@@ -23,12 +23,14 @@
                 <td>{{ existingAreaProcesso._categoria.nome }}</td>
                 <td>{{ existingAreaProcesso._nivelMaturidade.nome }}</td>
                 <td>
-                    <a ng-href="#/mostraAreaProcesso/{{ existingAreaProcesso._id }}" class="btn btn-default">Visualizar</a>
+                    <!-- <a ng-href="#/mostraAreaProcesso/{{ existingAreaProcesso._id }}" class="btn btn-default" ng-click="view(existingAreaProcesso)">Visualizar</a> -->
                     <a class="btn btn-danger" ng-click="delete(existingAreaProcesso)">Deletar</a>
                 </td>    
             </tr>
 
         </table>
+    
+
     </div>
     <a ng-href="#/addAreaProcesso" class="btn btn-primary">
         Cadastrar
